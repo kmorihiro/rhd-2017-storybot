@@ -61,15 +61,16 @@ function initStory() {
 
   // set characters
   let i = 0;
+  let target;
   for (i = 0; i < 3; i++) {
     if (i === answerId) {
       let charaIds = Array.from(Array(charaNum).keys());
       do {
-        let target = charaIds.pop()
+        target = charaIds.pop()
       } while (target !== i)
       charas[i] = new Character(i, tempNames.pop(), true, "target", target)
     } else {
-      let commentType = commentTypes(Math.fllor(Math.random() * commenTypes.length));
+      let commentType = commentTypes[Math.floor(Math.random() * commentTypes.length)];
       switch (commentType) {
         case "target":
           charas[i] = new Character(i, tempNames.pop(), false, commentType, answerId);
@@ -77,7 +78,7 @@ function initStory() {
         case "together":
           let charaIds = Array.from(Array(charaNum).keys());
           do {
-            let target = charaIds.pop()
+            target = charaIds.pop()
           } while (target !== i && target !== answerId)
           charas[i] = new Character(i, tempNames.pop(), false, commentType, answerId);
           break;
