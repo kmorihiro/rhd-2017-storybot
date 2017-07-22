@@ -40,32 +40,32 @@ const storyText = {
     "target": "小僧%(me.name)sは言いました。「%(target.name)sが食べているのを見たよ。」",
     "together": "小僧%(me.name)sは言いました。「私はずっと%(target.name)sと一緒に掃除をしていました。」",
     "ending": "水アメを食べた小僧は誰でしょうか。",
-    "image": "http://hukumusume.com/douwa/new/jap_gazou/03_19a.gif",
-    "fileName": "test.jpg"
+    "image": "https://raw.githubusercontent.com/kmorihiro/rhd-2017-storybot/master/images/honey.jpg",
+    "fileName": "honey.jpg"
   },
   "urashima": {
     "intro": "むかしむかし、ある村に、心のやさしい浦島太郎(うらしまたろう)という若者がいました。\n浦島さんが海辺を通りかかると、子どもたちが大きなカメを捕まえていました。\nそばによって見てみると、子どもたちがみんなでカメをいじめています。\n「おやおや、かわいそうに、逃がしておやりよ」\n「いやだよ。おらたちが、やっと捕まえたんだもの。どうしようと、おらたちの勝手だろ」\n見るとカメは涙をハラハラとこぼしながら、浦島さんを見つめています。\n浦島さんはお金を取り出すと、子どもたちに差し出して言いました。\n「それでは、このお金をあげるから、おじさんにカメを売っておくれ」\n「うん、それならいいよ」\nこうして浦島さんは、子どもたちからカメを受け取ると、\n「大丈夫かい？もう、捕まるんじゃないよ」\nと、カメをそっと、海の中へ逃がしてやりました。\n\nさて、それから二、三日たったある日の事、浦島さんが海に出かけて魚を釣っていると、カメは涙をハラハラとこぼしながら、浦島さんを見つめています。\n「また捕まっていじめられたのです」\n\n浦島さんは海辺にいた子どもたちに誰がいじめていたか聞きました。",
     "target": "%(me.name)sは言いました。「%(target.name)sがいじめてたんだ！」",
     "together": "%(me.name)sは言いました。「おらは、%(target.name)sと一緒にうちの手伝いをしていただよ。」",
     "ending": "いじめていた子どもは誰でしょうか。",
-    "image": "http://hukumusume.com/douwa/gazou/i_gazou/jap/AC_12ILAV05.JPG",
-    "fileName": "test.jpg"
+    "image": "https://raw.githubusercontent.com/kmorihiro/rhd-2017-storybot/master/images/urashima.jpg",
+    "fileName": "urashima.jpg"
   },
   "snowwhite": {
     "intro": "むかしむかし、とっても美しいけれど、心のみにくいお妃さまがいました。\nお妃さまは魔法のカガミを持っていて、いつも魔法のカガミにたずねます。\n「カガミよカガミよ、この世で一番美しいのは誰？」\nお妃さまは、カガミがいつもの様に、\n「あなたが、一番美しいです」\nと、答えるのを待ちました。しかしカガミは、\n「あなたの娘、白雪姫(しらゆきひめ)です」\nと、答えたのです。\n\nお妃さまに殺されそうになった白雪姫は、森に住む七人の小人たちと隠れて暮らす事になりました。\nそして小人たちが山に働きに行っている間、掃除や洗濯や針仕事をしたり、ごはんを作ったりして毎日を楽しく過ごしました。\n「白雪姫、わたしたちが仕事に行っている間、誰も家に入れちゃいけないよ。あの怖いおきさきに、ここが知られてしまうからね」\nと、いつも小人たちは言うのでした。\n\nところがある日、小人たちが山から戻って来ると、白雪姫はバタリと倒れていて、二度と目を開きませんでした。\n\n白雪姫のことが好きだった王子さまは、小人たちに犯人は誰か尋ねました。",
     "target": "%(me.name)sは言いました。「%(target.name)sがお妃さまにしゃべっちゃったんだ！」",
     "together": "%(me.name)sは言いました。「今日僕は、%(target.name)sと仕事をしていたよ。」",
     "ending": "裏切ったのはどの小人でしょうか。",
-    "image": "http://hukumusume.com/douwa/gazou/i_gazou/world/gazou/AC_12ILAV31.jpg",
-    "fileName": "test.jpg"
+    "image": "https://raw.githubusercontent.com/kmorihiro/rhd-2017-storybot/master/images/snowwhite.jpg",
+    "fileName": "snowwhite.jpg"
   },
   "3okuen": {
     "intro": "2017年7月21日午前9時20分頃―\n東芝府中工場のボーナス約３億円を積んだ日本信託銀行の現金輸送車が、府中刑務所横で偽装した白バイ警察官に止められた・・・。\n\n「コノ車ニ、ダイナマイトガ仕掛ケテアル・・・」\n\nこれが日本の犯罪史上類を見ないミステリーの幕が開いた瞬間だった―。\n偽白バイ警察官は車の下にもぐり込んだ後、叫び声が響いた。\n\n「爆発スルゾ！」\n発炎筒を焚いた犯人は、銀行員４人に対して車外へ避難するよう促すと、運転席に乗り込み３億円を積んだ車ごと走り去った。\n\nわずか３分間の犯行・・・。\n\nこのとき銀行員は危険を顧みず、爆発物を遠ざけてくれた勇敢な警察官だと思い、ただ走り去るのを見守っていた。\n乗り捨てられた白バイが偽モノであることに気付いたのは、それからしばらく経ってからである。だが、すでに犯人の姿は煙のごとく消えていた。\n\n警察は重要参考人である３人を呼び出して尋問した。",
     "target": "%(me.name)sは言いました。「%(target.name)sがお金を奪って逃げていったんだ！」",
     "together": "%(me.name)sは言いました。「私はその日、%(target.name)sと仕事をしていました。」",
     "ending": "犯人は誰でしょうか。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Nissan_Cedric_Custom_H31.jpg/440px-Nissan_Cedric_Custom_H31.jpg",
-    "fileName": "test.jpg"
+    "image": "https://raw.githubusercontent.com/kmorihiro/rhd-2017-storybot/master/images/3okuen.jpg",
+    "fileName": "3okuen.jpg"
   },
 }
 
