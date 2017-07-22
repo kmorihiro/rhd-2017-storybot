@@ -108,24 +108,6 @@ function initStory() {
 }
 
 
-var characters = [
-  {
-    id: 1,
-    name : 'A',
-    answer: true
-  },
-  {
-    id: 2,
-    name : 'B',
-    answer: false
-  },
-  {
-    id: 3,
-    name : 'C',
-    answer: false
-  }
-];
-
 bot.dialog('/', [
   function (session) {
     initStory();
@@ -135,7 +117,7 @@ bot.dialog('/', [
     for (i; i < charas.length; i++) {
       let me = charas[i];
       let target = charas.filter(chara => chara.id === me.refId)[0];
-      session.send(sprintf(storyText[story][me.commentType]));
+      session.send(sprintf(storyText[story][me.commentType], {me: me, target: target}));
     }
     builder.Prompts.choice(session, '犯人は誰でしょう？', charaNames, builder.ListStyle.button);
   },
