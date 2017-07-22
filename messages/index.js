@@ -45,8 +45,8 @@ bot.dialog('/', [
     if (results.response) {
       const answer = results.response.entity;
       const answerCharacter = characters.filter((item, index) => item.name == answer);
-      const correctCharacter = characters.filter((item, index) => item.answer == true);
-      if (answerCharacter.answer) {
+      const correctCharacter = characters.filter((item, index) => item.answer == true)[0];
+      if (answerCharacter[0] && answerCharacter[0].answer) {
         session.send('犯人は' + correctCharacter.name + 'です。正解！');
       } else {
         session.send('犯人は' + correctCharacter.name + 'です。不正解！');
