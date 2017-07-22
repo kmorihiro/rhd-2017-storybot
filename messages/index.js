@@ -2,6 +2,7 @@
 var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
 var path = require('path');
+const sprintf = require("sprintf-js").sprintf;
 
 var useEmulator = (process.env.NODE_ENV == 'development');
 
@@ -34,6 +35,14 @@ const storyTitles = {
   "murder2" : "殺人事件２",
 };
 
+const storyText = {
+  "honey1": {
+    "intro": "昔々、あるところに和尚のなんたら…和尚は小僧たちにききました。",
+    "target": ""
+  }
+}
+
+
 var story;
 var charas = [];
 var charaNames = [];
@@ -52,7 +61,8 @@ function initStory() {
   story = stories[Math.floor(Math.random()*stories.length)];
 
   // set characters
-  for (let i = 0, i < 3; i++) {
+  let i = 0
+  for (i = 0, i < 3; i++) {
     if (i === answerId) {
       let charaIds = Array.from(Array(charaNum).keys());
       do {
