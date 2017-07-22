@@ -16,8 +16,6 @@ var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure
 var bot = new builder.UniversalBot(connector);
 bot.localePath(path.join(__dirname, './locale'));
 
-
-
 function Character(_id, _name, _target_flag, _comment_type, _ref_id) {
   this.id = _id;
   this.name = _name;
@@ -55,6 +53,12 @@ function initStory() {
   const charaNum = 3;
   const answerId = Math.floor(Math.random() * charaNum);
   let tempNames = [].concat(names);
+  tempNames = tempNames.map(a => (
+    {
+      "weight": Math.random(),
+       "value": a
+    })).sort((a, b) => a.weight - b.weight)
+    .map(a => a.value);
 
   // set story title
   story = stories[Math.floor(Math.random()*stories.length)];
@@ -119,7 +123,7 @@ bot.dialog('/', [
     if (results.response) {
       const answer = results.response.entity;
       const answerCharacter = charas.filter((item, index) => item.name == answer);
-      const correctCharacter = charas.filter((item, index) => item.answer == true)[0];
+      const correctCharacter = charas.filter((item, index) => item.targetFlag == true)[0];
       if (answerCharacter[0] && answerCharacter[0].targetFlag) {
         session.send('犯人は' + correctCharacter.name + 'です。正解！');
       } else {
