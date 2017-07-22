@@ -38,7 +38,9 @@ const storyTitles = {
 const storyText = {
   "honey1": {
     "intro": "昔々、あるところに和尚のなんたら…和尚は小僧たちにききました。",
-    "target": ""
+    "target": "%sは言いました。「%sが犯人です。」",
+    "together": "",
+    "ending": ""
   }
 }
 
