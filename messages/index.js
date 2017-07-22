@@ -15,7 +15,7 @@ var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure
 var bot = new builder.UniversalBot(connector);
 bot.localePath(path.join(__dirname, './locale'));
 
-title = '和尚の蜂蜜';
+var title = '和尚の蜂蜜';
 
 bot.dialog('/', [
   function (session) {
