@@ -79,6 +79,11 @@ var charaNames = [];
 function initStory() {
   const charaNum = 3;
   const answerId = Math.floor(Math.random() * charaNum);
+
+  // init
+  charas = [];
+  charaNames = [];
+
   let tempNames = [].concat(names);
   tempNames = tempNames.map(a => (
     {
@@ -116,8 +121,8 @@ function initStory() {
         case "together":
           do {
             target = charaIds.pop();
-          } while (target === i || target === answerId);
-          charas[i] = new Character(i, tempNames.pop(), false, commentType, answerId);
+          } while (target == i || target == answerId);
+          charas[i] = new Character(i, tempNames.pop(), false, commentType, target);
           break;
       }
     }
