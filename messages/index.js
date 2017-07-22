@@ -84,15 +84,15 @@ function initStory() {
   let i = 0;
   let target;
   for (i = 0; i < 3; i++) {
+    let charaIds = Array.from(Array(charaNum).keys());
+    // random sort
+    charaIds = charaIds.map(a => (
+      {
+        "weight": Math.random(),
+        "value": a
+      })).sort((a, b) => a.weight - b.weight)
+      .map(a => a.value);
     if (i === answerId) {
-      let charaIds = Array.from(Array(charaNum).keys());
-      // random sort
-      charaIds = charaIds.map(a => (
-        {
-          "weight": Math.random(),
-          "value": a
-        })).sort((a, b) => a.weight - b.weight)
-        .map(a => a.value);
       do {
         target = charaIds.pop()
       } while (target == i);
