@@ -50,6 +50,7 @@ bot.dialog('/', [
         session.send('犯人は' + correctCharacter.name + 'です。正解！');
       } else {
         session.send('犯人は' + correctCharacter.name + 'です。不正解！');
+      }
     }
   }
 ]);
