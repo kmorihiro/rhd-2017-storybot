@@ -112,6 +112,7 @@ var characters = [
 bot.dialog('/', [
   function (session) {
     initStory();
+    session.send("ok1");
     session.send('小話をしましょう。お題は「' + storyTitles[story] + '」。');
     session.send('なんか小話…。');
     builder.Prompts.choice(session, '犯人は誰でしょう？', charaNames, builder.ListStyle.button);
