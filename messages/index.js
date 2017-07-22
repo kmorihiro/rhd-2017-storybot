@@ -24,8 +24,7 @@ function Character(_id, _name, _target_flag, _comment_type, _ref_id) {
   this.refId = _ref_id;
 };
 
-// const stories = ["honey","urashima","snowwhite"];
-const stories = ["honey"];
+const stories = ["honey","urashima","snowwhite"];
 const names = ["太郎", "花子", "次郎", "朋", "佑介", "恭平"];
 const commentTypes = ["target", "together"];
 const storyTitles = {
