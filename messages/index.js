@@ -38,7 +38,7 @@ const storyTitles = {
 const storyText = {
   "honey1": {
     "intro": "昔々、あるところに和尚のなんたら…和尚は小僧たちにききました。",
-    "target": "%sは言いました。「%sが犯人です。」",
+    "target": "%(chara[i].name)sは言いました。「%(refId)sが犯人です。」",
     "together": "",
     "ending": ""
   }
@@ -63,8 +63,8 @@ function initStory() {
   story = stories[Math.floor(Math.random()*stories.length)];
 
   // set characters
-  let i = 0
-  for (i = 0, i < 3; i++) {
+  let i = 0;
+  for (i = 0; i < 3; i++) {
     if (i === answerId) {
       let charaIds = Array.from(Array(charaNum).keys());
       do {
