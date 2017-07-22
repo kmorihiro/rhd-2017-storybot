@@ -24,14 +24,14 @@ function Character(_id, _name, _target_flag, _comment_type, _ref_id) {
   this.refId = _ref_id;
 };
 
-// const stories = ["honey1","murder1","murder2"];
+// const stories = ["honey","urashima","snowwhite"];
 const stories = ["honey1"];
 const names = ["太郎", "花子", "次郎", "朋", "佑介", "恭平"];
 const commentTypes = ["target", "together"];
 const storyTitles = {
-  "honey1" : "和尚の小話",
-  "murder1" : "殺人事件１",
-  "murder2" : "殺人事件２"
+  "honey" : "和尚の小話",
+  "urashima" : "浦島太郎",
+  "snowwhite" : "白雪姫"
 };
 
 const storyText = {
@@ -84,9 +84,16 @@ function initStory() {
   for (i = 0; i < 3; i++) {
     if (i === answerId) {
       let charaIds = Array.from(Array(charaNum).keys());
+      // random sort
+      charaIds = charaIds.map(a => (
+        {
+          "weight": Math.random(),
+          "value": a
+        })).sort((a, b) => a.weight - b.weight)
+        .map(a => a.value);
       do {
         target = charaIds.pop()
-      } while (target !== i)
+      } while (target == i);
       charas[i] = new Character(i, tempNames.pop(), true, "target", target)
     } else {
       let commentType = commentTypes[Math.floor(Math.random() * commentTypes.length)];
@@ -98,7 +105,7 @@ function initStory() {
           let charaIds = Array.from(Array(charaNum).keys());
           do {
             target = charaIds.pop()
-          } while (target !== i && target !== answerId)
+          } while (target == i || target == answerId);
           charas[i] = new Character(i, tempNames.pop(), false, commentType, answerId);
           break;
       }
@@ -119,7 +126,7 @@ bot.dialog('/', [
       let target = charas.filter(chara => chara.id === me.refId)[0];
       session.send(sprintf(storyText[story][me.commentType], {me: me, target: target}));
     }
-    builder.Prompts.choice(session, '犯人は誰でしょう？', charaNames, builder.ListStyle.button);
+    builder.Prompts.choice(session, storyText[story].ending, charaNames, builder.ListStyle.button);
   },
   function (session, results) {
     if (results.response) {
