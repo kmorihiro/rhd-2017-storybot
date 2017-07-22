@@ -93,7 +93,7 @@ function initStory() {
       .map(a => a.value);
     if (i === answerId) {
       do {
-        target = charaIds.pop()
+        target = charaIds.pop();
       } while (target == i);
       charas[i] = new Character(i, tempNames.pop(), true, "target", target)
     } else {
@@ -103,10 +103,9 @@ function initStory() {
           charas[i] = new Character(i, tempNames.pop(), false, commentType, answerId);
           break;
         case "together":
-          let charaIds = Array.from(Array(charaNum).keys());
           do {
-            target = charaIds.pop()
-          } while (target == i || target == answerId);
+            target = charaIds.pop();
+          } while (target === i || target === answerId);
           charas[i] = new Character(i, tempNames.pop(), false, commentType, answerId);
           break;
       }
