@@ -36,7 +36,7 @@ const storyTitles = {
 
 var story;
 var charas = [];
-var names = [];
+var charaNames = [];
 
 
 //chara[0] = new Character(1, "太郎", true, "target", 2);
@@ -75,7 +75,7 @@ function initStory() {
       }
     }
   }
-  names = charas.map(character => character.name);
+  charaNames = charas.map(character => character.name);
 }
 
 
@@ -102,7 +102,7 @@ bot.dialog('/', [
     initStory();
     session.send('小話をしましょう。お題は「' + storyTitles[story] + '」。');
     session.send('なんか小話…。');
-    builder.Prompts.choice(session, '犯人は誰でしょう？', names, builder.ListStyle.button);
+    builder.Prompts.choice(session, '犯人は誰でしょう？', charaNames, builder.ListStyle.button);
   },
   function (session, results) {
     if (results.response) {
