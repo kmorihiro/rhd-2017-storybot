@@ -32,7 +32,7 @@ const commentTypes = ["target", "together"];
 const storyTitles = {
   "honey1" : "和尚の小話",
   "murder1" : "殺人事件１",
-  "murder2" : "殺人事件２",
+  "murder2" : "殺人事件２"
 };
 
 const storyText = {
@@ -50,9 +50,6 @@ var charas = [];
 var charaNames = [];
 
 
-//chara[0] = new Character(1, "太郎", true, "target", 2);
-//chara[1] = new Character(2, "花子", false, "target", 1);
-//chara[2] = new Character(3, "二郎", false, "together", 2);
 
 function initStory() {
   const charaNum = 3;
@@ -68,21 +65,21 @@ function initStory() {
     if (i === answerId) {
       let charaIds = Array.from(Array(charaNum).keys());
       do {
-        let target = pop.charaIds()
+        let target = charaIds.pop()
       } while (target !== i)
-      charas[i] = new Character(i, tempNames.pop(Math.floor(Math.random() * tempNames.length)), true, "target", target)
+      charas[i] = new Character(i, tempNames.pop(), true, "target", target)
     } else {
       let commentType = commentTypes(Math.fllor(Math.random() * commenTypes.length));
       switch (commentType) {
         case "target":
-          charas[i] = new Character(i, tempNames.pop(Math.floor(Math.random() * tempNames.length)), false, commentType, answerId);
+          charas[i] = new Character(i, tempNames.pop(), false, commentType, answerId);
           break;
         case "together":
           let charaIds = Array.from(Array(charaNum).keys());
           do {
-            let target = pop.charaIds()
+            let target = charaIds.pop()
           } while (target !== i && target !== answerId)
-          charas[i] = new Character(i, tempNames.pop(Math.floor(Math.random() * tempNames.length)), false, commentType, answerId);
+          charas[i] = new Character(i, tempNames.pop(), false, commentType, answerId);
           break;
       }
     }
