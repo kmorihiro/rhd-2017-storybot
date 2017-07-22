@@ -32,7 +32,7 @@ var characters = [
     name : 'C',
     answer: false
   }
-}
+]
 var names = characters.map(character =>   character.name);
 
 bot.dialog('/', [
